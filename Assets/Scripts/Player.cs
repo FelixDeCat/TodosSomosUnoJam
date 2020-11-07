@@ -7,8 +7,6 @@ public class Player : MonoBehaviour
     public float speed;
     public float Maxlife;
     float Actuallife;
-    public Transform subOne;
-    public Transform subTwo;
 
 
     private void Start()
