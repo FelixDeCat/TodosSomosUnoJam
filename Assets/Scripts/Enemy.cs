@@ -32,6 +32,14 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.layer == 10)
         {
             _ScoreManager.DecreasePoints(negativePoints);
+
+            var obj = collision.gameObject.GetComponent<Player>();
+
+            if (obj != null)
+            {
+                obj.Divide();
+            }
+
             Destroy(gameObject);
         }
         

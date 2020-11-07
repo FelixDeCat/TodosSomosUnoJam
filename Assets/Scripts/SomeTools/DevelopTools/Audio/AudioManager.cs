@@ -11,13 +11,8 @@ public class AudioManager : MonoBehaviour
     public enum AudioGroups { GAME_FX, MUSIC, MISC, JABALI, SLOWMO, AMBIENT_FX, OnFightMusic, OffFightMusic }
 
     [SerializeField] private AudioMixerGroup _fx = null;
-    [SerializeField] private AudioMixerGroup _jabali = null;
     [SerializeField] private AudioMixerGroup _music = null;
     [SerializeField] private AudioMixerGroup _misc = null;
-    [SerializeField] private AudioMixerGroup _slowmo = null;
-    [SerializeField] private AudioMixerGroup _ambient_FX = null;
-    [SerializeField] private AudioMixerGroup _onFightMusic = null;
-    [SerializeField] private AudioMixerGroup _offFightMusic = null;
 
     private Dictionary<string, SoundPool> _soundRegistry = new Dictionary<string, SoundPool>();
     private Dictionary<AudioGroups, AudioMixerGroup> _audioMixers = new Dictionary<AudioGroups, AudioMixerGroup>();
@@ -36,11 +31,6 @@ public class AudioManager : MonoBehaviour
         _audioMixers.Add(AudioGroups.GAME_FX, _fx);
         _audioMixers.Add(AudioGroups.MUSIC, _music);
         _audioMixers.Add(AudioGroups.MISC, _misc);
-        _audioMixers.Add(AudioGroups.JABALI, _jabali);
-        _audioMixers.Add(AudioGroups.SLOWMO, _slowmo);
-        _audioMixers.Add(AudioGroups.AMBIENT_FX, _ambient_FX);
-        _audioMixers.Add(AudioGroups.OnFightMusic, _onFightMusic);
-        _audioMixers.Add(AudioGroups.OffFightMusic, _offFightMusic);
     }
 
     #region SlowMO

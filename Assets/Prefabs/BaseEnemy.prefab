@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3550632743038628207}
   - component: {fileID: 6277229443447462402}
   - component: {fileID: 7382055462779650231}
-  - component: {fileID: 4314602253076764094}
+  - component: {fileID: 5010789866336256138}
   m_Layer: 11
   m_Name: BaseEnemy
   m_TagString: Untagged
@@ -117,9 +117,9 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!68 &4314602253076764094
-EdgeCollider2D:
+  m_Constraints: 4
+--- !u!60 &5010789866336256138
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -132,10 +132,17 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.74, y: 10.74}
+    newSize: {x: 10.74, y: 10.74}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: -5.0248427, y: -4.984977}
-  - {x: -5.019256, y: -4.985239}
-  - {x: 0.0068659033, y: 4.9617925}
-  - {x: 5.041428, y: -4.9707584}
-  - {x: -5.025165, y: -4.9827523}
+    m_Paths:
+    - - {x: 5.1181307, y: -5.074937}
+      - {x: 0.024582416, y: 5.2659993}
+      - {x: -5.0803595, y: -5.043721}
