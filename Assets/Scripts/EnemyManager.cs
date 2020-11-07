@@ -10,6 +10,7 @@ public class EnemyManager : MonoBehaviour
     float timer;
 
     bool canSpawnBase;
+    bool spawned3Last;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,8 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canSpawnBase) SpawnBaseEnemy();
+        if (canSpawnBase && !spawned3Last) SpawnBaseEnemy3();
+        else if (canSpawnBase && spawned3Last) SpawnBaseEnemy2();
 
         timer += Time.deltaTime;
         if (timer >= timerSpawnEnemy)
@@ -30,7 +32,20 @@ public class EnemyManager : MonoBehaviour
 
     }
 
-    public void SpawnBaseEnemy()
+    public void SpawnBaseEnemy2()
+    {
+        GameObject spawned = Instantiate(baseEnemy);
+        spawned.transform.position = new Vector3(Random.Range(-21, 21), -15);
+
+        GameObject spawned2 = Instantiate(baseEnemy);
+        spawned2.transform.position = new Vector3(Random.Range(-21, 21), -15);
+
+        canSpawnBase = false;
+        spawned3Last = false;
+        timer = 0;
+    }
+
+    public void SpawnBaseEnemy3()
     {
         GameObject spawned = Instantiate(baseEnemy);
         spawned.transform.position = new Vector3(Random.Range(-21, 21), -15);
@@ -41,6 +56,7 @@ public class EnemyManager : MonoBehaviour
         GameObject spawned3 = Instantiate(baseEnemy);
         spawned3.transform.position = new Vector3(Random.Range(-21, 21), -15);
         canSpawnBase = false;
+        spawned3Last = true;
         timer = 0;
     }
 

@@ -5,8 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed;
+    public int negativePoints;
 
-    // Update is called once per frame
     void Update()
     {
         transform.position += new Vector3(0,speed*Time.deltaTime);
@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.layer == 10)
         {
+            FindObjectOfType<ScoreManager>().DecreasePoints(negativePoints);
             Destroy(gameObject);
         }
         
