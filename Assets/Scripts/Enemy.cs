@@ -7,6 +7,13 @@ public class Enemy : MonoBehaviour
     public float speed;
     public int negativePoints;
 
+    ScoreManager _ScoreManager;
+
+    private void Start()
+    {
+        _ScoreManager = FindObjectOfType<ScoreManager>();
+    }
+
     void Update()
     {
         transform.position += new Vector3(0,speed*Time.deltaTime);
@@ -24,7 +31,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.layer == 10)
         {
-            FindObjectOfType<ScoreManager>().DecreasePoints(negativePoints);
+            _ScoreManager.DecreasePoints(negativePoints);
             Destroy(gameObject);
         }
         

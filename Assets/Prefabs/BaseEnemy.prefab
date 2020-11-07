@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1654579756876140931}
   - component: {fileID: 3550632743038628207}
   - component: {fileID: 6277229443447462402}
-  - component: {fileID: -61666375722859281}
   - component: {fileID: 7382055462779650231}
+  - component: {fileID: 4314602253076764094}
   m_Layer: 11
   m_Name: BaseEnemy
   m_TagString: Untagged
@@ -97,32 +97,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   negativePoints: 50
---- !u!61 &-61666375722859281
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2556634946143453580}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.74, y: 10.74}
-    newSize: {x: 10.74, y: 10.74}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 10.74, y: 10.74}
-  m_EdgeRadius: 0
 --- !u!50 &7382055462779650231
 Rigidbody2D:
   serializedVersion: 4
@@ -144,3 +118,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!68 &4314602253076764094
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2556634946143453580}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -5.0248427, y: -4.984977}
+  - {x: -5.019256, y: -4.985239}
+  - {x: 0.0068659033, y: 4.9617925}
+  - {x: 5.041428, y: -4.9707584}
+  - {x: -5.025165, y: -4.9827523}
