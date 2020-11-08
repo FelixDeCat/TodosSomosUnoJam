@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/PabloPrimerVer.unity
+    guid: f1d0abe59e4d47a488940be62d10e77d
   m_configObjects: {}

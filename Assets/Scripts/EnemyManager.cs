@@ -35,10 +35,10 @@ public class EnemyManager : MonoBehaviour
     public void SpawnBaseEnemy2()
     {
         GameObject spawned = Instantiate(baseEnemy);
-        spawned.transform.position = new Vector3(Random.Range(-21, 21), -15);
+        spawned.transform.position = new Vector3(Random.Range(-8, 8), -15);
 
         GameObject spawned2 = Instantiate(baseEnemy);
-        spawned2.transform.position = new Vector3(Random.Range(-21, 21), -15);
+        spawned2.transform.position = new Vector3(Random.Range(-8, 8), -15);
 
         canSpawnBase = false;
         spawned3Last = false;
@@ -48,13 +48,13 @@ public class EnemyManager : MonoBehaviour
     public void SpawnBaseEnemy3()
     {
         GameObject spawned = Instantiate(baseEnemy);
-        spawned.transform.position = new Vector3(Random.Range(-21, 21), -15);
+        spawned.transform.position = new Vector3(Random.Range(-8, 8), -15);
 
         GameObject spawned2 = Instantiate(baseEnemy);
-        spawned2.transform.position = new Vector3(Random.Range(-21, 21), -15);
+        spawned2.transform.position = new Vector3(Random.Range(-8,8), -15);
 
         GameObject spawned3 = Instantiate(baseEnemy);
-        spawned3.transform.position = new Vector3(Random.Range(-21, 21), -15);
+        spawned3.transform.position = new Vector3(Random.Range(-8, 8), -15);
         canSpawnBase = false;
         spawned3Last = true;
         timer = 0;

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public Text scoreText;
-    float points;
+    float points = 1;
     float HighScore;
 
 
@@ -28,6 +28,10 @@ public class ScoreManager : MonoBehaviour
     public void DecreasePoints(int pointsToDecrease)
     {
         points -= pointsToDecrease;
-        if (points <= 0) points = 0;
+        if (points <= 0)
+        {
+            points = 0;
+            //Time.timeScale = 0;
+        }
     }
 }
