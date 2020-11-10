@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
         _ScoreManager = FindObjectOfType<ScoreManager>();
     }
 
-    void Update()
+    public virtual void Update()
     {
         Move();
     }
@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
         transform.position += new Vector3(0, speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 9)
         {
@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 10)
         {

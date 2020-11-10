@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7458214399270593183}
   m_Layer: 0
-  m_Name: EnemyFilter
+  m_Name: EnemyFilterSR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -442,6 +442,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseEnemy (87)
       objectReference: {fileID: 0}
+    - target: {fileID: 5010789866336256138, guid: ea7cb05fd3021d747ab4ada2acf9820b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea7cb05fd3021d747ab4ada2acf9820b, type: 3}
 --- !u!4 &8175961861943727997 stripped
@@ -621,6 +626,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BaseEnemy (73)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010789866336256138, guid: ea7cb05fd3021d747ab4ada2acf9820b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea7cb05fd3021d747ab4ada2acf9820b, type: 3}
@@ -1072,6 +1082,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseEnemy (102)
       objectReference: {fileID: 0}
+    - target: {fileID: 5010789866336256138, guid: ea7cb05fd3021d747ab4ada2acf9820b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea7cb05fd3021d747ab4ada2acf9820b, type: 3}
 --- !u!4 &8175961862018144461 stripped
@@ -1522,6 +1537,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseEnemy (86)
       objectReference: {fileID: 0}
+    - target: {fileID: 5010789866336256138, guid: ea7cb05fd3021d747ab4ada2acf9820b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea7cb05fd3021d747ab4ada2acf9820b, type: 3}
 --- !u!4 &8175961862185636370 stripped
@@ -1611,6 +1631,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BaseEnemy (119)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010789866336256138, guid: ea7cb05fd3021d747ab4ada2acf9820b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea7cb05fd3021d747ab4ada2acf9820b, type: 3}
@@ -2512,6 +2537,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseEnemy (95)
       objectReference: {fileID: 0}
+    - target: {fileID: 5010789866336256138, guid: ea7cb05fd3021d747ab4ada2acf9820b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea7cb05fd3021d747ab4ada2acf9820b, type: 3}
 --- !u!4 &8175961862306220038 stripped
@@ -2871,6 +2901,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BaseEnemy (76)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010789866336256138, guid: ea7cb05fd3021d747ab4ada2acf9820b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea7cb05fd3021d747ab4ada2acf9820b, type: 3}
@@ -3592,6 +3627,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseEnemy (94)
       objectReference: {fileID: 0}
+    - target: {fileID: 5010789866336256138, guid: ea7cb05fd3021d747ab4ada2acf9820b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea7cb05fd3021d747ab4ada2acf9820b, type: 3}
 --- !u!4 &8175961860814389370 stripped
@@ -4132,6 +4172,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseEnemy (110)
       objectReference: {fileID: 0}
+    - target: {fileID: 5010789866336256138, guid: ea7cb05fd3021d747ab4ada2acf9820b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea7cb05fd3021d747ab4ada2acf9820b, type: 3}
 --- !u!4 &8175961861283187902 stripped
@@ -4401,6 +4446,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BaseEnemy (103)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010789866336256138, guid: ea7cb05fd3021d747ab4ada2acf9820b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea7cb05fd3021d747ab4ada2acf9820b, type: 3}
@@ -4762,6 +4812,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseEnemy (118)
       objectReference: {fileID: 0}
+    - target: {fileID: 5010789866336256138, guid: ea7cb05fd3021d747ab4ada2acf9820b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea7cb05fd3021d747ab4ada2acf9820b, type: 3}
 --- !u!4 &8175961861447030445 stripped
@@ -4851,6 +4906,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BaseEnemy (111)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010789866336256138, guid: ea7cb05fd3021d747ab4ada2acf9820b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea7cb05fd3021d747ab4ada2acf9820b, type: 3}
