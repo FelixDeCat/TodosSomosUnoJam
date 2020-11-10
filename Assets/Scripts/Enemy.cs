@@ -16,7 +16,12 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        transform.position += new Vector3(0,speed*Time.deltaTime);
+        Move();
+    }
+
+    public virtual void Move()
+    {
+        transform.position += new Vector3(0, speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
