@@ -352,7 +352,7 @@ MonoBehaviour:
   - {fileID: 4121362156724228390}
   - {fileID: 6213119973145766332}
   num: 0
-  speed: 8
+  speed: 5
   negativePoints: 100
   minDist: 1
   rand: 0

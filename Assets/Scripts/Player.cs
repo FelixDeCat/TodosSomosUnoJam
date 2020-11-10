@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
 
         if (type_val == 3)
         {
-            aux = aux * 3;
+            aux = aux * 2;
             transform.localScale = new Vector3(1, 1, 1);
         }
         if (type_val == 2)
@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
             for (int i = 0; i < 2; i++)
             {
                 var obj = GameObject.Instantiate(GameManager.GetPlayer());
-                obj.transform.position = new Vector3(i == 0 ? obj.transform.position.x - 1 : obj.transform.position.x + 1, obj.transform.position.y, obj.transform.position.z);
+                obj.transform.position = new Vector3(i == 0 ? obj.transform.position.x - 1.5f : obj.transform.position.x + 1.5f, obj.transform.position.y, obj.transform.position.z);
                 if (type_cel == 3) obj.Build(2);
                 if (type_cel == 2) obj.Build(1);
             }
