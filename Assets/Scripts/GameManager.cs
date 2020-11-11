@@ -7,13 +7,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public LoadHandler loadHandler;
-    public UnityEvent OnPreLoad;
-    public UnityEvent OnEndLoad;
+    
     private void Awake() => instance = this;
     private void Start()
     {
-        OnPreLoad.Invoke();
-        loadHandler.BeginLoad(OnEndLoad.Invoke);
+        PublicEvents.instance.EVENT_OnPreLoad();
+        loadHandler.BeginLoad(PublicEvents.instance.EVENT_OnEndLoad);
     }
 
     [SerializeField] Player model_player;
@@ -22,5 +21,12 @@ public class GameManager : MonoBehaviour
     public List<Player> players = new List<Player>();
 
     public void SubscribePlayer(Player player) => players.Add(player);
-    public void UnSubscribePlayer(Player player) => players.Remove(player);
+    public void UnSubscribePlayer(Player player) 
+    { 
+        players.Remove(player);
+        if (players.Count <= 0)
+        {
+            PublicEvents.instance.EVENT_OnPlayerDeath();
+        }
+    }
 }

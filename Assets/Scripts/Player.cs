@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
     {
         if (type_cel > 1)
         {
+            PublicEvents.instance.EVENT_OnPlayerHit();
             for (int i = 0; i < 2; i++)
             {
                 var obj = GameObject.Instantiate(GameManager.GetPlayer());

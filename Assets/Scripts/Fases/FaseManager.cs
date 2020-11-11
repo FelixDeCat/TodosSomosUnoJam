@@ -22,6 +22,7 @@ public class FaseManager : LoadComponent
     {
         current = 0;
         StartFase();
+        PublicEvents.instance.EVENT_OnBeginFirstFase();
     }
 
     void Check()
@@ -31,10 +32,11 @@ public class FaseManager : LoadComponent
         current++;
         if (current >= fases.Length)
         {
-            Debug.Log("END ALL FASES");
+            PublicEvents.instance.EVENT_OnEndAllFases();
         }
         else
         {
+            PublicEvents.instance.EVENT_OnChangeFase();
             fases[current].BeginFase();
         }
     }
