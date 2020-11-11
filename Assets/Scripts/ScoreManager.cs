@@ -3,25 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager : LoadComponent
 {
-    public Text scoreText;
+    public Text scoreText = null;
     float points = 1;
-    float HighScore;
+    float HighScore = 0;
+    bool canUpdate = false;
 
+    protected override IEnumerator LoadMe()
+    {
+        yield return null;
+    }
 
-    void Start()
+    public override void OnStartGame()
     {
         scoreText.text = "0";
+        canUpdate = true;
     }
 
 
     void Update()
     {
+        if (!canUpdate) return;
+
         points += Time.deltaTime * 10;
-
         if (HighScore < points) HighScore = points;
-
         scoreText.text = points.ToString();
     }
 
@@ -31,7 +37,6 @@ public class ScoreManager : MonoBehaviour
         if (points <= 0)
         {
             points = 0;
-            //Time.timeScale = 0;
         }
     }
 }

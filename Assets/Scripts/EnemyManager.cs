@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : LoadComponent
 {
     public GameObject baseEnemy;
 
@@ -12,15 +12,26 @@ public class EnemyManager : MonoBehaviour
     bool canSpawnBase;
     bool spawned3Last;
 
-    // Start is called before the first frame update
-    void Start()
+    bool canupdate = false;
+
+
+    protected override IEnumerator LoadMe()
     {
         timer = 0;
+        yield return null;
     }
+
+    public override void OnStartGame()
+    {
+        canupdate = true;
+    }
+
 
     // Update is called once per frame
     void Update()
     {
+        if (!canupdate) return;
+
         if (canSpawnBase && !spawned3Last) SpawnBaseEnemy3();
         else if (canSpawnBase && spawned3Last) SpawnBaseEnemy2();
 
@@ -35,10 +46,10 @@ public class EnemyManager : MonoBehaviour
     public void SpawnBaseEnemy2()
     {
         GameObject spawned = Instantiate(baseEnemy);
-        spawned.transform.position = new Vector3(Random.Range(-8, 8), -15);
+        spawned.transform.position = new Vector3(UniversalValues.Get_Random_X_Position(), UniversalValues.POS_TO_ENEMY_SPAWN);
 
         GameObject spawned2 = Instantiate(baseEnemy);
-        spawned2.transform.position = new Vector3(Random.Range(-8, 8), -15);
+        spawned2.transform.position = new Vector3(UniversalValues.Get_Random_X_Position(), UniversalValues.POS_TO_ENEMY_SPAWN);
 
         canSpawnBase = false;
         spawned3Last = false;
@@ -48,16 +59,17 @@ public class EnemyManager : MonoBehaviour
     public void SpawnBaseEnemy3()
     {
         GameObject spawned = Instantiate(baseEnemy);
-        spawned.transform.position = new Vector3(Random.Range(-8, 8), -15);
+        spawned.transform.position = new Vector3(UniversalValues.Get_Random_X_Position(), UniversalValues.POS_TO_ENEMY_SPAWN);
 
         GameObject spawned2 = Instantiate(baseEnemy);
-        spawned2.transform.position = new Vector3(Random.Range(-8,8), -15);
+        spawned2.transform.position = new Vector3(UniversalValues.Get_Random_X_Position(), UniversalValues.POS_TO_ENEMY_SPAWN);
 
         GameObject spawned3 = Instantiate(baseEnemy);
-        spawned3.transform.position = new Vector3(Random.Range(-8, 8), -15);
+        spawned3.transform.position = new Vector3(UniversalValues.Get_Random_X_Position(), UniversalValues.POS_TO_ENEMY_SPAWN);
         canSpawnBase = false;
         spawned3Last = true;
         timer = 0;
     }
 
+    
 }

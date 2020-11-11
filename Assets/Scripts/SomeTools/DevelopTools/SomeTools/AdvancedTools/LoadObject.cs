@@ -33,5 +33,8 @@ public class LoadObject : LoadComponent
         Destroy(go);
     }
 
-    
+    public override void OnStartGame()
+    {
+        
+    }
 }

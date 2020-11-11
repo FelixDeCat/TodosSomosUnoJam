@@ -2,17 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundDataBase : MonoBehaviour
+public class SoundDataBase : LoadComponent
 {
     [SerializeField] AudioClip auEx;
 
-    private void Awake()
+    protected override IEnumerator LoadMe()
     {
-        if(auEx) AudioManager.instance.GetSoundPool(auEx.name, AudioManager.AudioGroups.GAME_FX, auEx);
+        if (auEx) AudioManager.instance.GetSoundPool(auEx.name, AudioManager.AudioGroups.GAME_FX, auEx);
+        yield return null;
+    }
+
+    public override void OnStartGame()
+    {
+
     }
 
     public void PLayAuEx()
     {
         AudioManager.instance.PlaySound(auEx.name);
     }
+
+    
 }

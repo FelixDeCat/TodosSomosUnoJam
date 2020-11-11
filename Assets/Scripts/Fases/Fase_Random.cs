@@ -1,0 +1,39 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Tools.Screen;
+
+public class Fase_Random : Fase
+{
+    public GameObject[] ToSpawn;
+    public float space_time;
+
+    float timer;
+
+
+    protected override void OnBegin()
+    {
+        timer = 0;
+        Debug.Log("Fase iniciada");
+    }
+
+    protected override void OnEnd()
+    {
+        timer = 0;
+    }
+
+    protected override void OnUpdate()
+    {
+        if (timer < space_time)
+        {
+            timer = timer + 1 * Time.deltaTime;
+        }
+        else
+        {
+            int index = Random.Range(0, ToSpawn.Length-1);
+            GameObject go = Instantiate(ToSpawn[index]);
+            go.transform.position = new Vector3(UniversalValues.Get_Random_X_Position(), UniversalValues.POS_TO_ENEMY_SPAWN);
+            timer = 0;
+        }
+    }
+}

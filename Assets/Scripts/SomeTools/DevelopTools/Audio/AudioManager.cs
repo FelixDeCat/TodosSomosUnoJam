@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : LoadComponent
 {
     public enum AudioGroups { GAME_FX, MUSIC, MISC, JABALI, SLOWMO, AMBIENT_FX, OnFightMusic, OffFightMusic }
 
@@ -22,15 +22,19 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         if (instance == null) instance = this;
-
-        RegisterAudioMixer();
     }
 
-    private void RegisterAudioMixer()
+    protected override IEnumerator LoadMe()
     {
         _audioMixers.Add(AudioGroups.GAME_FX, _fx);
         _audioMixers.Add(AudioGroups.MUSIC, _music);
         _audioMixers.Add(AudioGroups.MISC, _misc);
+        yield return null;
+    }
+
+    public override void OnStartGame()
+    {
+        
     }
 
     #region SlowMO
@@ -186,4 +190,6 @@ public class AudioManager : MonoBehaviour
         EndCallback?.Invoke();
         _soundRegistry[sT].ReturnToPool(aS);
     }
+
+    
 }
