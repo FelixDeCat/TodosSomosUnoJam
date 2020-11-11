@@ -31,4 +31,8 @@ public abstract class Fase : MonoBehaviour
     protected abstract void OnBegin();
     protected abstract void OnEnd();
     protected abstract void OnUpdate();
+    public virtual void EndElement()
+    {
+
+    }
 }

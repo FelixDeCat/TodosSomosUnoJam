@@ -7,6 +7,12 @@ public class FaseManager : LoadComponent
     public Fase[] fases;
     int current;
 
+    public static FaseManager instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+
     protected override IEnumerator LoadMe()
     {
         yield return null;
@@ -18,8 +24,26 @@ public class FaseManager : LoadComponent
         StartFase();
     }
 
-    void StartFase()
+    void Check()
     {
-        fases[current].BeginFase();
+        fases[current].EndFase();
+
+        current++;
+        if (current >= fases.Length)
+        {
+            Debug.Log("END ALL FASES");
+        }
+        else
+        {
+            fases[current].BeginFase();
+        }
     }
+
+    public void EndFase()
+    {
+        Check();
+    }
+
+    void StartFase() => fases[current].BeginFase();
+    public void TRIGGER_EndElement() => fases[current].EndElement();
 }

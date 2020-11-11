@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flippers : MonoBehaviour
+public class Flippers : EnemyBase
 {
     public float speed;
 

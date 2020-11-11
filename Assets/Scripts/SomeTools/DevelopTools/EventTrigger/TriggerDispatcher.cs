@@ -70,5 +70,7 @@ public enum Entities //In progress
 {
     all,
     player,
-    enemy
+    enemy,
+    special,
+    game_action
 }
