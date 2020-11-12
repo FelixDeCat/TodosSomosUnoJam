@@ -98,6 +98,8 @@ MonoBehaviour:
   speed: 20
   Maxlife: 0
   type_cel: 3
+  pausePanel: {fileID: 5274116688043762190, guid: 3d08c0fba83a4e445801b4221c7b1a12,
+    type: 3}
 --- !u!50 &4028660358518017678
 Rigidbody2D:
   serializedVersion: 4

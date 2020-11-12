@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     float Actuallife;
     public int type_cel = 3;
 
+    public GameObject pausePanel;
+    bool isPauseOn = false;
+
 
     private void Start()
     {
@@ -43,13 +46,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         this.transform.position += Vector3.right * speed * Time.deltaTime * Input.GetAxis("Horizontal");
-
     }
     public void SetMaxLife()
     {
         Maxlife--;
     }
-
 
     public void Divide()
     {
