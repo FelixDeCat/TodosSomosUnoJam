@@ -1,75 +1,75 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using UnityEngine;
 
 public class EnemyManager : LoadComponent
 {
     public GameObject baseEnemy;
-
-    public float timerSpawnEnemy;
-    float timer;
-
-    bool canSpawnBase;
-    bool spawned3Last;
-
-    bool canupdate = false;
-
+    public static EnemyManager instance;
+    private void Awake() => instance = this;
 
     protected override IEnumerator LoadMe()
     {
-        timer = 0;
+        
         yield return null;
     }
 
     public override void OnStartGame()
     {
-        canupdate = true;
+        
+    }
+
+    public void Spawn()
+    {
+        bool[] positions = GetPositions();
+
+        for (int i = 0; i < positions.Length; i++)
+        {
+            if (positions[i])
+            {
+                GameObject spawned = Instantiate(baseEnemy);
+                spawned.transform.position = new Vector3(UniversalValues.POSITIONS[i], UniversalValues.POS_TO_ENEMY_SPAWN);
+            }
+        }
     }
 
 
-    // Update is called once per frame
-    void Update()
+    public bool[] GetPositions()
     {
-        if (!canupdate) return;
+        bool[] aux = new bool[UniversalValues.COUNT_POSITIONS];
 
-        if (canSpawnBase && !spawned3Last) SpawnBaseEnemy3();
-        else if (canSpawnBase && spawned3Last) SpawnBaseEnemy2();
+        int initialrandom = Random.Range(0,UniversalValues.COUNT_POSITIONS-1);
+        int auxrandom = -1;
 
-        timer += Time.deltaTime;
-        if (timer >= timerSpawnEnemy)
+        if (initialrandom <= 0)
         {
-            canSpawnBase = true;
+            auxrandom = 1;
+        }
+        else
+        {
+            if (initialrandom >= UniversalValues.COUNT_POSITIONS - 1)
+            {
+                auxrandom = UniversalValues.COUNT_POSITIONS - 2;
+            }
+            else
+            {
+                auxrandom = Random.Range(0, 2) == 0 ? initialrandom - 1 : initialrandom + 1;
+            }
         }
 
+        for (int i = 0; i < aux.Length; i++)
+        {
+            if (i == initialrandom || i == auxrandom)
+            {
+                aux[i] = false;
+            }
+            else
+            {
+                aux[i] = true;
+            }
+        }
+
+        return aux;
     }
-
-    public void SpawnBaseEnemy2()
-    {
-        GameObject spawned = Instantiate(baseEnemy);
-        spawned.transform.position = new Vector3(UniversalValues.Get_Random_X_Position(), UniversalValues.POS_TO_ENEMY_SPAWN);
-
-        GameObject spawned2 = Instantiate(baseEnemy);
-        spawned2.transform.position = new Vector3(UniversalValues.Get_Random_X_Position(), UniversalValues.POS_TO_ENEMY_SPAWN);
-
-        canSpawnBase = false;
-        spawned3Last = false;
-        timer = 0;
-    }
-
-    public void SpawnBaseEnemy3()
-    {
-        GameObject spawned = Instantiate(baseEnemy);
-        spawned.transform.position = new Vector3(UniversalValues.Get_Random_X_Position(), UniversalValues.POS_TO_ENEMY_SPAWN);
-
-        GameObject spawned2 = Instantiate(baseEnemy);
-        spawned2.transform.position = new Vector3(UniversalValues.Get_Random_X_Position(), UniversalValues.POS_TO_ENEMY_SPAWN);
-
-        GameObject spawned3 = Instantiate(baseEnemy);
-        spawned3.transform.position = new Vector3(UniversalValues.Get_Random_X_Position(), UniversalValues.POS_TO_ENEMY_SPAWN);
-        canSpawnBase = false;
-        spawned3Last = true;
-        timer = 0;
-    }
-
-    
 }
