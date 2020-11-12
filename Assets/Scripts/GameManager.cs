@@ -24,6 +24,14 @@ public class GameManager : MonoBehaviour
     Player GetPLayer() => model_player;
     public List<Player> players = new List<Player>();
 
+    public void PushAllPlayers(bool right, float force = 10)
+    {
+        for (int i = 0; i < players.Count; i++)
+        {
+            players[i].Push(right,force);
+        }
+    }
+
     public void SubscribePlayer(Player player) => players.Add(player);
     public void UnSubscribePlayer(Player player) 
     { 

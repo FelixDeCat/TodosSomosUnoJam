@@ -11,6 +11,11 @@ public class Player : MonoBehaviour
 
     public GameObject pausePanel;
     bool isPauseOn = false;
+    public Rigidbody2D rb;
+
+    bool anim_control_cursor = false;
+    float control_cursor = 1;
+
 
 
     private void Start()
@@ -43,13 +48,48 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector3(size, size, size);
         }
     }
+    float x_move;
+    float input_horizontal = 0;
     void Update()
     {
-        this.transform.position += Vector3.right * speed * Time.deltaTime * Input.GetAxis("Horizontal");
+
+        input_horizontal = Input.GetAxis("Horizontal");
+
+        if (Mathf.Abs(input_horizontal) > 0.1f)
+        {
+            x_move = (speed + Time.deltaTime) * Input.GetAxis("Horizontal") * control_cursor;
+
+            Vector2 aux = new Vector2(x_move, 0);
+            rb.velocity = Vector3.Lerp( rb.velocity ,aux, control_cursor);
+        }
+
+        if (anim_control_cursor)
+        {
+            if (control_cursor < 1f)
+            {
+                control_cursor += Time.deltaTime;
+            }
+            else
+            {
+                control_cursor = 1;
+                anim_control_cursor = false;
+            }
+        }
+
     }
     public void SetMaxLife()
     {
         Maxlife--;
+    }
+
+
+    public void Push(bool right, float force = 10)
+    {
+        rb.velocity = Vector2.zero;
+        control_cursor = 0;
+        anim_control_cursor = true;
+        Vector2 pushvector = right ? Vector2.right : Vector2.right * -1;
+        rb.AddForce(pushvector * force, ForceMode2D.Impulse);
     }
 
     public void Divide()

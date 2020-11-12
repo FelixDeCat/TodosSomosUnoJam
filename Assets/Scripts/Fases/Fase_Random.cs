@@ -33,7 +33,7 @@ public class Fase_Random : Fase
         }
         else
         {
-            int index = Random.Range(0, ToSpawn.Length - 1);
+            int index = Random.Range(0, ToSpawn.Length);
             GameObject go = Instantiate(ToSpawn[index]);
             go.transform.position = new Vector3(UniversalValues.Get_Random_X_Position(), UniversalValues.POS_TO_ENEMY_SPAWN);
 

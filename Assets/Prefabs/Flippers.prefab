@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 266711001416000684}
   - component: {fileID: 7377079915013679384}
   - component: {fileID: 8773746115962418059}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Flippers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3229196194262599407}
   m_LocalRotation: {x: -0, y: -0, z: 0.0000009685754, w: 1}
   m_LocalPosition: {x: -5.43, y: -11.997303, z: 0}
-  m_LocalScale: {x: 9.276688, y: 9.276688, z: 9.276688}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -145,3 +145,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  right: 1
