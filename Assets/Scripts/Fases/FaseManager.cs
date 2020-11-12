@@ -32,7 +32,9 @@ public class FaseManager : LoadComponent
         current++;
         if (current >= fases.Length)
         {
-            PublicEvents.instance.EVENT_OnEndAllFases();
+            //PublicEvents.instance.EVENT_OnEndAllFases();
+            current = 0;
+            fases[current].BeginFase();
         }
         else
         {
