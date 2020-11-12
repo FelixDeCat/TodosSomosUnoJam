@@ -5,9 +5,9 @@ using UnityEngine;
 public class Data : MonoBehaviour
 {
     [Header("Speeds")]
-    public float fast_speed = 9;
-    public float medium_speed = 7;
-    public float slow_speed = 5;
+    public float fast_speed = 13;
+    public float medium_speed = 9;
+    public float slow_speed = 7;
 
     [Header("Size")]
     public float big;
