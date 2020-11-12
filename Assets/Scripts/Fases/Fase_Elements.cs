@@ -5,11 +5,9 @@ using UnityEngine;
 public class Fase_Elements : Fase
 {
     public GameObject[] ToSpawn;
-    public float timeToSpawn;
     public int patronsToSpawn;
     int current = 0;
     float timer;
-    bool canSpawn = true;
 
     protected override void OnBegin()
     {
@@ -20,15 +18,7 @@ public class Fase_Elements : Fase
 
     protected override void OnEnd() { current = 0; }
 
-    protected override void OnUpdate()
-    {
-        timer += Time.deltaTime;
-
-        if (timer <= timeToSpawn && canSpawn)
-        {
-            Spawn();
-        }
-    }
+    protected override void OnUpdate(){    }
 
 
 
@@ -39,14 +29,13 @@ public class Fase_Elements : Fase
         {
             FaseManager.instance.EndFase();
         }
-        /*else
+        else
         {
             Spawn();
-        }*/
+        }
     }
     void Spawn()
     {
-        canSpawn = false;
         GameObject go = Instantiate(ToSpawn[Random.Range(0, ToSpawn.Length - 1)]);
         go.transform.position = new Vector3(0, UniversalValues.POS_TO_ENEMY_SPAWN);
     }
@@ -54,7 +43,5 @@ public class Fase_Elements : Fase
     public override void EndElement()
     {
         Check();
-        timer = 0;
-        canSpawn = true;
     }
 }
