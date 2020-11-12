@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Tools.Screen;
 
 public class Player : MonoBehaviour
 {
@@ -59,7 +60,25 @@ public class Player : MonoBehaviour
         {
             x_move = (speed + Time.deltaTime) * Input.GetAxis("Horizontal") * control_cursor;
 
-            Vector2 aux = new Vector2(x_move, 0);
+            Vector2 aux = new Vector3(0,0,0);
+
+            if (GhostFollow.instance.GetGhostTransformOrNull() != null)
+            {
+                Vector2 dir = GhostFollow.instance.GetGhostTransformOrNull().position - this.transform.position;
+                dir.Normalize();
+
+
+                aux = new Vector2(x_move + dir.x, dir.y);
+            }
+            else
+            {
+                Vector2 dir = new Vector2(transform.position.x, 7) - new Vector2(transform.position.x, transform.position.y);
+                dir.Normalize();
+
+                aux = new Vector2(x_move + dir.x, dir.y);
+                
+            }
+
             rb.velocity = Vector3.Lerp( rb.velocity ,aux, control_cursor);
         }
 
@@ -76,6 +95,21 @@ public class Player : MonoBehaviour
             }
         }
 
+        ClampToScreen(this.transform);
+
+    }
+
+
+    void ClampToScreen(Transform t)
+    {
+        if (t.position.x >= ScreenLimits.Right_Superior.x)
+        {
+            t.position = new Vector2(ScreenLimits.Right_Superior.x - 0.5f, t.position.y);
+        }
+        if (t.position.x <= ScreenLimits.Left_Inferior.x)
+        {
+            t.position = new Vector2(ScreenLimits.Left_Inferior.x + 0.5f, t.position.y);
+        }
     }
     public void SetMaxLife()
     {
