@@ -7,10 +7,16 @@ using UnityEngine.UI;
 public class ButtonManager : MonoBehaviour
 {
     public string sceneName;
+    public string sceneName2;
 
-    public void LoadScene()
+    public void LoadScene1()
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void LoadScene2()
+    {
+        SceneManager.LoadScene(sceneName2);
     }
 
     public void QuitButton()

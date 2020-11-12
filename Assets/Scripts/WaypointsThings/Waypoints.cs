@@ -73,7 +73,7 @@ public class Waypoints : MonoBehaviour
     {
         if (collision.gameObject.layer == 10)
         {
-            _ScoreManager.DecreasePoints(negativePoints);
+            //_ScoreManager.DecreasePoints(negativePoints);
 
             var obj = collision.gameObject.GetComponent<Player>();
 
@@ -82,7 +82,7 @@ public class Waypoints : MonoBehaviour
                 obj.Divide();
             }
 
-            Destroy(gameObject);
+            Destroy(_Parent);
         }
 
     }

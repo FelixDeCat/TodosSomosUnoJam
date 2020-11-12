@@ -6,9 +6,13 @@ using UnityEngine.UI;
 public class ScoreManager : LoadComponent
 {
     public Text scoreText = null;
+    public Text highScoreText = null;
+    public Text highScoreEndText = null;
+    public GameObject canvasEndGame;
     float points = 1;
     float HighScore = 0;
     bool canUpdate = false;
+    float timerDead;
 
     protected override IEnumerator LoadMe()
     {
@@ -17,26 +21,51 @@ public class ScoreManager : LoadComponent
 
     public override void OnStartGame()
     {
-        scoreText.text = "0";
+        Time.timeScale = 1;
+        canvasEndGame.SetActive(false);
+        scoreText.text = "Score:" + " ";
+        highScoreText.text = "HighScore:" + " ";
+        highScoreEndText.text = "HighScore:" + " ";
         canUpdate = true;
     }
-
+    
 
     void Update()
     {
         if (!canUpdate) return;
 
         points += Time.deltaTime * 10;
-        if (HighScore < points) HighScore = points;
-        scoreText.text = points.ToString();
+        if (HighScore < points)
+        {
+            HighScore = points;
+            highScoreText.text = "HighScore: " + " " + HighScore.ToString();
+            highScoreEndText.text = HighScore.ToString();
+        }
+        scoreText.text = "Score: " + " " + points.ToString();
+
     }
 
-    public void DecreasePoints(int pointsToDecrease)
+    /*public void DecreasePoints(int pointsToDecrease)
     {
         points -= pointsToDecrease;
         if (points <= 0)
         {
             points = 0;
+        }
+    }*/
+
+    public void EndGame()
+    {
+        StartCoroutine(checkerPlayer());
+    }
+
+    IEnumerator checkerPlayer()
+    {
+        yield return new WaitForSeconds(1);
+        if (!FindObjectOfType<Player>())
+        {
+            canvasEndGame.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }

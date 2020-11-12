@@ -36,7 +36,7 @@ public class Enemy : EnemyBase
     {
         if (collision.gameObject.layer == 10)
         {
-            _ScoreManager.DecreasePoints(negativePoints);
+            //_ScoreManager.DecreasePoints(negativePoints);
 
             var obj = collision.gameObject.GetComponent<Player>();
 
