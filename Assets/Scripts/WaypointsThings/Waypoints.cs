@@ -11,6 +11,7 @@ public class Waypoints : MonoBehaviour
     public int negativePoints;
 
     ScoreManager _ScoreManager;
+    GameObject _Parent;
 
     public float minDist;
 
@@ -21,6 +22,7 @@ public class Waypoints : MonoBehaviour
     private void Start()
     {
         _ScoreManager = FindObjectOfType<ScoreManager>();
+        _Parent = this.transform.parent.gameObject;
     }
 
 
@@ -63,7 +65,7 @@ public class Waypoints : MonoBehaviour
     {
         if (collision.gameObject.layer == 9)
         {
-            Destroy(gameObject);
+            Destroy(_Parent);
         }
     }
 
