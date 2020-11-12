@@ -38,4 +38,23 @@ public class GameManager : MonoBehaviour
             PublicEvents.instance.EVENT_OnPlayerDeath();
         }
     }
+
+    public void AvoidHits()
+    {
+        for (int i = 0; i < players.Count; i++)
+        {
+            players[i].GetComponent<CircleCollider2D>().enabled = false;
+        }
+
+        StartCoroutine(TurnOnCollider());
+    }
+
+    IEnumerator TurnOnCollider()
+    {
+        yield return new WaitForSeconds(1.5f);
+        for (int i = 0; i < players.Count; i++)
+        {
+            players[i].GetComponent<CircleCollider2D>().enabled = true;
+        }
+    }
 }
