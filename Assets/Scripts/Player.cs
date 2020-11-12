@@ -14,31 +14,31 @@ public class Player : MonoBehaviour
     {
         Actuallife = Maxlife;
         GameManager.instance.SubscribePlayer(this);
-
     }
 
     public void Build(int type_val)
     {
         type_cel = type_val;
-        var aux = speed / 4;
+        float size = 0;
 
         if (type_val == 3)
         {
-            aux = aux * 2;
-            transform.localScale = new Vector3(GameManager.instance.big, GameManager.instance.big, GameManager.instance.big);
+            size = GameManager.instance.data.big;
+            speed = GameManager.instance.data.slow_speed;
+            transform.localScale = new Vector3(size, size, size);
         }
         if (type_val == 2)
         {
-            aux = aux * 1;
-            transform.localScale = new Vector3(GameManager.instance.medium, GameManager.instance.medium, GameManager.instance.medium);
+            size = GameManager.instance.data.medium;
+            speed = GameManager.instance.data.medium_speed;
+            transform.localScale = new Vector3(size, size, size);
         }
         if (type_val == 1)
         {
-            transform.localScale = new Vector3(GameManager.instance.small, GameManager.instance.small, GameManager.instance.small);
+            size = GameManager.instance.data.small;
+            speed = GameManager.instance.data.fast_speed;
+            transform.localScale = new Vector3(size, size, size);
         }
-
-        speed -= aux;
-
     }
     void Update()
     {
@@ -58,8 +58,9 @@ public class Player : MonoBehaviour
             PublicEvents.instance.EVENT_OnPlayerHit();
             for (int i = 0; i < 2; i++)
             {
+                var separation = GameManager.instance.data.Separation;
                 var obj = GameObject.Instantiate(GameManager.GetPlayer());
-                obj.transform.position = new Vector3(i == 0 ? obj.transform.position.x - 1.15f : obj.transform.position.x + 1.15f, obj.transform.position.y, obj.transform.position.z);
+                obj.transform.position = new Vector3(i == 0 ? obj.transform.position.x - separation : obj.transform.position.x + separation, obj.transform.position.y, obj.transform.position.z);
                 if (type_cel == 3) obj.Build(2);
                 if (type_cel == 2) obj.Build(1);
             }

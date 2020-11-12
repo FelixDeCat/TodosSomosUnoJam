@@ -8,19 +8,14 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public LoadHandler loadHandler;
 
-    public float big;
-    public float medium;
-    public float small;
+    public Data data;
     
     private void Awake() => instance = this;
     private void Start()
     {
         PublicEvents.instance.EVENT_OnPreLoad();
         loadHandler.BeginLoad(PublicEvents.instance.EVENT_OnEndLoad);
-        big = GetPlayer().transform.localScale.x;
-        medium = GetPlayer().transform.localScale.x * 0.5f;
-        small = GetPlayer().transform.localScale.x * 0.25f;
-        GetPlayer().Build(3);
+        data.Initialize();
 
     }
 

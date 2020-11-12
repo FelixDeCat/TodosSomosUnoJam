@@ -843,6 +843,7 @@ GameObject:
   - component: {fileID: 672807981}
   - component: {fileID: 672807980}
   - component: {fileID: 672807982}
+  - component: {fileID: 672807983}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -863,9 +864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadHandler: {fileID: 672807982}
-  big: 0
-  medium: 0
-  small: 0
+  data: {fileID: 672807983}
   model_player: {fileID: 4761367757560515398, guid: d0772f53e3de98c4e886c6d7735cc666,
     type: 3}
   players: []
@@ -895,6 +894,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a263652a0da28943927fc56ef19c461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &672807983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672807979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8185015a464fecf48b7988e51b1abc1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fast_speed: 9
+  medium_speed: 7
+  slow_speed: 5
+  big: 0
+  medium: 0
+  small: 0
+  Separation: 1.15
 --- !u!1 &738464415
 GameObject:
   m_ObjectHideFlags: 0
@@ -3335,7 +3353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1922610849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3350,7 +3368,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseEnemy: {fileID: 2556634946143453580, guid: ea7cb05fd3021d747ab4ada2acf9820b,
     type: 3}
-  timerSpawnEnemy: 1
 --- !u!4 &1922610850
 Transform:
   m_ObjectHideFlags: 0
