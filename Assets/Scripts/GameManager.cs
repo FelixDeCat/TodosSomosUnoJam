@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -41,16 +42,6 @@ public class GameManager : MonoBehaviour
             PublicEvents.instance.EVENT_OnPlayerDeath();
         }
     }
-
-    public void AvoidHits()
-    {
-        for (int i = 0; i < players.Count; i++)
-        {
-            players[i].GetComponent<CircleCollider2D>().enabled = false;
-        }
-
-        StartCoroutine(TurnOnCollider());
-    }
     public void TurnCollisions(bool val)
     {
         for (int i = 0; i < players.Count; i++)
@@ -63,15 +54,6 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < players.Count; i++)
         {
             players[i].TurnOnBubble();
-        }
-    }
-
-    IEnumerator TurnOnCollider()
-    {
-        yield return new WaitForSeconds(1f);
-        for (int i = 0; i < players.Count; i++)
-        {
-            players[i].GetComponent<CircleCollider2D>().enabled = true;
         }
     }
 
@@ -146,5 +128,13 @@ public class GameManager : MonoBehaviour
     {
         var obj = GameObject.Instantiate(GameManager.GetPlayer());
         obj.Build(1, GhostFollow.instance.follow_dinamic.transform.position);
+    }
+
+    internal void SetRecallOnPlayers()
+    {
+        for (int i = 0; i < players.Count; i++)
+        {
+            players[i].HitRecall();
+        }
     }
 }

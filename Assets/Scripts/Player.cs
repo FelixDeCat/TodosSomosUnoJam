@@ -18,15 +18,24 @@ public class Player : MonoBehaviour
     bool anim_control_cursor = false;
     float control_cursor = 1;
 
-    [Range(0,50)]
+    [Range(0, 50)]
     public float repel_force = 25;
 
     [SerializeField] Bubble myBubble;
+    [SerializeField] AnimInvulnerabilty anim_invulnerability;
+
+    public float time_to_recall;
+    float timer_recall;
+    bool onrecall;
+
+
 
     private void Start()
     {
         GameManager.instance.SubscribePlayer(this);
     }
+
+   
 
     public void Build(int type_val, Vector2 pos)
     {
@@ -59,8 +68,8 @@ public class Player : MonoBehaviour
 
         Vector2 dir = new Vector2(Random.Range(transform.position.x + 10, transform.position.x + 10), Random.Range(transform.position.y + 10, transform.position.y + 10)) - new Vector2(transform.position.x, transform.position.y);
         dir.Normalize();
-       
-        rb.AddForceAtPosition(dir *20, transform.position , ForceMode2D.Impulse);
+
+        rb.AddForceAtPosition(dir * 20, transform.position, ForceMode2D.Impulse);
 
     }
     float x_move;
@@ -75,7 +84,7 @@ public class Player : MonoBehaviour
         {
             x_move = (speed + Time.deltaTime) * Input.GetAxis("Horizontal") * control_cursor;
 
-            Vector2 aux = new Vector3(0,0,0);
+            Vector2 aux = new Vector3(0, 0, 0);
 
             if (GhostFollow.instance.GetGhostTransformOrNull() != null)
             {
@@ -91,10 +100,10 @@ public class Player : MonoBehaviour
                 dir.Normalize();
 
                 aux = new Vector2(x_move + dir.x, dir.y);
-                
+
             }
 
-            rb.velocity = Vector3.Lerp( rb.velocity ,aux, control_cursor);
+            rb.velocity = Vector3.Lerp(rb.velocity, aux, control_cursor);
         }
 
         if (anim_control_cursor)
@@ -109,6 +118,8 @@ public class Player : MonoBehaviour
                 anim_control_cursor = false;
             }
         }
+
+        UpdateRecall();
 
         ClampToScreen(this.transform);
 
@@ -154,7 +165,7 @@ public class Player : MonoBehaviour
 
         if (t.position.y >= ScreenLimits.Right_Superior.y)
         {
-            t.position = new Vector2(GhostFollow.instance.GetGhostTransformOrNull().position.x, ScreenLimits.Right_Superior.y -0.5f);
+            t.position = new Vector2(GhostFollow.instance.GetGhostTransformOrNull().position.x, ScreenLimits.Right_Superior.y - 0.5f);
         }
     }
 
@@ -169,6 +180,10 @@ public class Player : MonoBehaviour
 
     public void Divide()
     {
+        if (onrecall) return;
+
+        
+
         if (type_cel > 1)
         {
             SoundDataBase.instance.PlayCellDivide();
@@ -184,10 +199,13 @@ public class Player : MonoBehaviour
         }
         else
         {
-             SoundDataBase.instance.PlayDeathCell();
+            SoundDataBase.instance.PlayDeathCell();
         }
         GameManager.instance.UnSubscribePlayer(this);
+
+        GameManager.instance.SetRecallOnPlayers();
         Destroy(this.gameObject);
+
     }
 
     public void TurnOnBubble()
@@ -198,4 +216,21 @@ public class Player : MonoBehaviour
     {
         myCol.enabled = val;
     }
+
+    #region Recall Damage
+    public void HitRecall()
+    {
+        onrecall = true;
+        timer_recall = 0;
+        anim_invulnerability.Anim();
+    }
+    void UpdateRecall()
+    {
+        if (onrecall)
+        {
+            if (timer_recall < time_to_recall) timer_recall = timer_recall + 1 * Time.deltaTime;
+            else { timer_recall = 0; onrecall = false; anim_invulnerability.StopAnim(); }
+        }
+    }
+    #endregion
 }

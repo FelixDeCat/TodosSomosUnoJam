@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 4761367757560515398}
   - component: {fileID: 4028660358518017678}
   - component: {fileID: 6562883194047056576}
+  - component: {fileID: 7230816730288521819}
   m_Layer: 10
   m_Name: Celula
   m_TagString: Untagged
@@ -240,6 +241,8 @@ MonoBehaviour:
   myRender: {fileID: 3997903143027400028}
   repel_force: 25
   myBubble: {fileID: 7753397153863354600}
+  anim_invulnerability: {fileID: 7230816730288521819}
+  time_to_recall: 1
 --- !u!50 &4028660358518017678
 Rigidbody2D:
   serializedVersion: 4
@@ -277,3 +280,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.01}
   serializedVersion: 2
   m_Radius: 0.24503957
+--- !u!114 &7230816730288521819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3997903143027400029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38fd767a71670b4f8710ddb81aee1e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulseSpeed: 5
+  sprender: {fileID: 3997903143027400028}
