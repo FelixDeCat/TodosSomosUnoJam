@@ -809,6 +809,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseGamePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 5274116688043762190, guid: 3d08c0fba83a4e445801b4221c7b1a12,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5561296881057186954, guid: 3d08c0fba83a4e445801b4221c7b1a12,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -965,11 +970,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndGamePanel
       objectReference: {fileID: 0}
-    - target: {fileID: 8168542021550391636, guid: 21fc1b705e366e244aa5682dd4dbb46a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8168542021550391659, guid: 21fc1b705e366e244aa5682dd4dbb46a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1074,11 +1074,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8320203012830188648, guid: 21fc1b705e366e244aa5682dd4dbb46a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.2999878
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21fc1b705e366e244aa5682dd4dbb46a, type: 3}

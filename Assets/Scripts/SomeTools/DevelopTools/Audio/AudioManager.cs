@@ -22,13 +22,14 @@ public class AudioManager : LoadComponent
     private void Awake()
     {
         if (instance == null) instance = this;
+        _audioMixers.Add(AudioGroups.GAME_FX, _fx);
+        _audioMixers.Add(AudioGroups.MUSIC, _music);
+        _audioMixers.Add(AudioGroups.MISC, _misc);
     }
 
     protected override IEnumerator LoadMe()
     {
-        _audioMixers.Add(AudioGroups.GAME_FX, _fx);
-        _audioMixers.Add(AudioGroups.MUSIC, _music);
-        _audioMixers.Add(AudioGroups.MISC, _misc);
+        
         yield return null;
     }
 
