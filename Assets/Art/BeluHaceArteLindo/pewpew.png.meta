@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 82388f884c2e9d74fb0356a5aa70ef97
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 684337887656328383
+    second: pewpew_0
+  - first:
+      213: 7900750298586270344
+    second: pewpew_1
+  - first:
+      213: 7867229451194086383
+    second: pewpew_2
+  - first:
+      213: -5920241489786662173
+    second: pewpew_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -84,11 +96,95 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pewpew_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 35
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06222fb8cfd92b54dbdbe694da9e1d31
+      internalID: 684337887656328383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pewpew_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 35
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c9ede8c3fd0524e94c22c6c7a5b8de
+      internalID: 7900750298586270344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pewpew_2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 2
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c0d8d33e70b784697792c6b8855bd2
+      internalID: 7867229451194086383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pewpew_3
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 2
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6869bfa983127f4b9ecddf9e44e6333
+      internalID: -5920241489786662173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9f6a0c0c431c72643b3fbaed375c1761
     internalID: 0
     vertices: []
     indices: 
