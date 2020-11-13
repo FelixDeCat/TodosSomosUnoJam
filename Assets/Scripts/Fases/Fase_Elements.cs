@@ -42,6 +42,7 @@ public class Fase_Elements : Fase
         {
             randomNumber = Random.Range(0, ToSpawn.Length - 1);
             GameObject go = Instantiate(ToSpawn[randomNumber]);
+            //go.transform.localScale = new Vector3(Random.Range(-1,1),1);
             go.transform.position = new Vector3(0, UniversalValues.POS_TO_ENEMY_SPAWN);
             lastSpawned = randomNumber;
         }
