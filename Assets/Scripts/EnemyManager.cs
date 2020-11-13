@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyManager : LoadComponent
 {
-    public GameObject baseEnemy;
+    public GameObject[] baseEnemy;
     public static EnemyManager instance;
     private void Awake() => instance = this;
 
@@ -28,7 +28,7 @@ public class EnemyManager : LoadComponent
         {
             if (positions[i])
             {
-                GameObject spawned = Instantiate(baseEnemy);
+                GameObject spawned = Instantiate(baseEnemy[Random.Range(0, baseEnemy.Length)]);
                 spawned.transform.position = new Vector3(UniversalValues.POSITIONS[i], UniversalValues.POS_TO_ENEMY_SPAWN);
             }
         }

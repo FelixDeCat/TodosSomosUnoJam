@@ -3449,8 +3449,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615bbf63db4ae234d8dd3bada8d4621f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseEnemy: {fileID: 2556634946143453580, guid: ea7cb05fd3021d747ab4ada2acf9820b,
-    type: 3}
+  baseEnemy:
+  - {fileID: 61880316133668239, guid: 65235a5b5d539e54bbc0a021fa773289, type: 3}
+  - {fileID: 2556634946143453580, guid: ea7cb05fd3021d747ab4ada2acf9820b, type: 3}
+  - {fileID: 6709955111763224949, guid: 7d19cdc78450a644ba05b3c39c26ee6b, type: 3}
 --- !u!4 &1922610850
 Transform:
   m_ObjectHideFlags: 0
