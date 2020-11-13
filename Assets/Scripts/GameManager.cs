@@ -74,4 +74,77 @@ public class GameManager : MonoBehaviour
             players[i].GetComponent<CircleCollider2D>().enabled = true;
         }
     }
+
+    public void ReceiveSignalHeal(int signal)
+    {
+        int child_acum = 0;
+        int med_acum = 0;
+        for (int i = 0; i < players.Count; i++)
+        {
+            if (players[i].type_cel == 1) child_acum++;
+            if (players[i].type_cel == 2) med_acum++;
+        }
+
+        if (signal == 1)
+        {
+            if (child_acum > 1)
+            {
+                Create(1);
+            }
+            else
+            {
+                Create();
+            }
+        }
+        else if (signal == 2)
+        {
+            if (med_acum > 1)
+            {
+                Create(2);
+            }
+            else
+            {
+                if (child_acum > 1)
+                {
+                    Create(1);
+                }
+                else
+                {
+                    Create();
+                }
+            }
+        }
+    }
+
+    public void Create(int signal)
+    {
+       Player[] plays = new Player[2];
+        int acum = 0;
+
+        for (int i = 0; i < players.Count; i++)
+        {
+            if (players[i].type_cel == signal)
+            {
+                plays[acum] = players[i];
+                acum++;
+            }
+        }
+
+        Vector3 posacum = Vector3.zero; 
+        for (int i = 0; i < plays.Length; i++)
+        {
+            posacum += plays[i].gameObject.transform.position;
+            UnSubscribePlayer(plays[i]);
+            Destroy(plays[i].gameObject);
+        }
+        posacum = posacum / 2;
+
+        var obj = GameObject.Instantiate(GameManager.GetPlayer());
+        obj.Build(signal+1, posacum);
+    }
+    public void Create()
+    {
+        var obj = GameObject.Instantiate(GameManager.GetPlayer());
+        obj.Build(1, GhostFollow.instance.follow_dinamic.transform.position);
+    }
 }

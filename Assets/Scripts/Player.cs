@@ -128,14 +128,16 @@ public class Player : MonoBehaviour
 
     public void Heal()
     {
-        if (type_cel == 1)
-        {
-            Build(2, this.transform.position);
-        }
-        else if (type_cel == 2)
-        {
-            Build(3, this.transform.position);
-        }
+        GameManager.instance.ReceiveSignalHeal(type_cel);
+
+        //if (type_cel == 1)
+        //{
+        //    Build(2, this.transform.position);
+        //}
+        //else if (type_cel == 2)
+        //{
+        //    Build(3, this.transform.position);
+        //}
     }
 
     void ClampToScreen(Transform t)
