@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : EnemyBase
+public class PUBase : MonoBehaviour
 {
     public float speed;
-    public int negativePoints;
 
 
     public virtual void Update()
@@ -30,16 +29,8 @@ public class Enemy : EnemyBase
     {
         if (collision.gameObject.layer == 10)
         {
-
-            var obj = collision.gameObject.GetComponent<Player>();
-
-            if (obj != null)
-            {
-                obj.Divide();
-            }
-
             Destroy(gameObject);
         }
-        
     }
+
 }
