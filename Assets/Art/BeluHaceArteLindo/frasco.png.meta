@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: 2765436041881547394
     second: frasco_1
+  - first:
+      213: 1249536248810187584
+    second: frasco_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -97,7 +100,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 198
+        width: 12
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -106,7 +109,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 729fbbd96e8bb5b47b485827fb3784d4
+      spriteID: 3ff7f540572e0ac45842cf5ba43e262c
       internalID: 2202023932640019005
       vertices: []
       indices: 
@@ -116,10 +119,10 @@ TextureImporter:
       name: frasco_1
       rect:
         serializedVersion: 2
-        x: 210
-        y: 0
-        width: 184
-        height: 512
+        x: 12
+        y: 205
+        width: 174
+        height: 307
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +130,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da16fa586f2730f43b25da7a633f591e
+      spriteID: aa0b8b541336f614c975ff8fad2c8379
       internalID: 2765436041881547394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frasco_2
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 200
+        width: 181
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49ec1ee6ce11a8c45a0f695b5c701442
+      internalID: 1249536248810187584
       vertices: []
       indices: 
       edges: []
