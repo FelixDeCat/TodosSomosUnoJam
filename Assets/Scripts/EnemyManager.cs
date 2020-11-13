@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using UnityEngine;
+using Tools.Extensions;
+using Tools;
 
 public class EnemyManager : LoadComponent
 {
     public GameObject[] baseEnemy;
+    public int[] probabilities;
     public static EnemyManager instance;
     private void Awake() => instance = this;
+
+    Dictionary<GameObject, int> dic = new Dictionary<GameObject, int>();
 
     protected override IEnumerator LoadMe()
     {
@@ -17,7 +22,13 @@ public class EnemyManager : LoadComponent
 
     public override void OnStartGame()
     {
-        
+        for (int i = 0; i < baseEnemy.Length; i++)
+        {
+            if (!dic.ContainsKey(baseEnemy[i]))
+            {
+                dic.Add(baseEnemy[i], probabilities[i]);
+            } 
+        }
     }
 
     public void Spawn()
@@ -28,7 +39,8 @@ public class EnemyManager : LoadComponent
         {
             if (positions[i])
             {
-                GameObject spawned = Instantiate(baseEnemy[Random.Range(0, baseEnemy.Length)]);
+                //GameObject spawned = Instantiate(baseEnemy[Random.Range(0, baseEnemy.Length)]);
+                var spawned = Instantiate(RoulletteWheel.Roullette(dic));
                 spawned.transform.position = new Vector3(UniversalValues.POSITIONS[i], UniversalValues.POS_TO_ENEMY_SPAWN);
             }
         }

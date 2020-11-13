@@ -389,7 +389,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.4
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -509,6 +509,7 @@ MonoBehaviour:
   - {fileID: 3229196194262599407, guid: 4c54163154a520a448675b2ee39359f0, type: 3}
   - {fileID: 6709955111763224949, guid: 7d19cdc78450a644ba05b3c39c26ee6b, type: 3}
   - {fileID: 5013079433570988799, guid: e3b3b7231de79e845bf3bc1043f222d6, type: 3}
+  probabilities: 0a00000004000000040000000500000003000000030000000300000004000000
   space_time: 1
   durationFase: 10
   proced: 0
@@ -798,12 +799,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78851117da643a2458c5b1b180740c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ToSpawn:
-  - {fileID: 2556634946143453580, guid: ea7cb05fd3021d747ab4ada2acf9820b, type: 3}
-  - {fileID: 156899494590323906, guid: 6e2273e0d9dc5eb478e17274787f8704, type: 3}
-  - {fileID: 7812990436163901451, guid: 159660e9262213540b2cd318930cf46d, type: 3}
-  - {fileID: 61880316133668239, guid: 65235a5b5d539e54bbc0a021fa773289, type: 3}
-  - {fileID: 5013079433570988799, guid: e3b3b7231de79e845bf3bc1043f222d6, type: 3}
+  ToSpawn: []
+  probabilities: 
   space_time: 1
   durationFase: 10
   proced: 1
@@ -2556,6 +2553,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1155552746 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 187997051311714845, guid: e702b835a074f364ab54ecc48d349608,
+    type: 3}
+  m_PrefabInstance: {fileID: 1155552741}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1178019106
 GameObject:
   m_ObjectHideFlags: 0
@@ -3579,7 +3582,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FeedbackMaxHIgsScore:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1155552746}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   scoreText: {fileID: 1155552745}
   highScoreText: {fileID: 1155552744}
   highScoreGlobal: {fileID: 749583578}
@@ -3842,6 +3856,7 @@ MonoBehaviour:
   - {fileID: 2556634946143453580, guid: ea7cb05fd3021d747ab4ada2acf9820b, type: 3}
   - {fileID: 6709955111763224949, guid: 7d19cdc78450a644ba05b3c39c26ee6b, type: 3}
   - {fileID: 5013079433570988799, guid: e3b3b7231de79e845bf3bc1043f222d6, type: 3}
+  probabilities: 040000000a0000000100000002000000
 --- !u!4 &1922610850
 Transform:
   m_ObjectHideFlags: 0
