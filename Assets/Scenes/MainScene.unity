@@ -2999,30 +2999,15 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 735525127}
-    - target: {fileID: 1840277882266808336, guid: 3d08c0fba83a4e445801b4221c7b1a12,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene1
-      objectReference: {fileID: 0}
     - target: {fileID: 2942284451056746861, guid: 3d08c0fba83a4e445801b4221c7b1a12,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 735525127}
-    - target: {fileID: 2942284451056746861, guid: 3d08c0fba83a4e445801b4221c7b1a12,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OffPauseMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 5274116688043762190, guid: 3d08c0fba83a4e445801b4221c7b1a12,
         type: 3}
       propertyPath: m_Name
       value: PauseGamePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 5274116688043762190, guid: 3d08c0fba83a4e445801b4221c7b1a12,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5561296881057186954, guid: 3d08c0fba83a4e445801b4221c7b1a12,
         type: 3}
@@ -3134,11 +3119,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 735525127}
-    - target: {fileID: 6044619358472374465, guid: 3d08c0fba83a4e445801b4221c7b1a12,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d08c0fba83a4e445801b4221c7b1a12, type: 3}
 --- !u!224 &1656621956 stripped
@@ -3581,7 +3561,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 15
   m_TargetDisplay: 0
 --- !u!1001 &3997903143285903899
 PrefabInstance:
