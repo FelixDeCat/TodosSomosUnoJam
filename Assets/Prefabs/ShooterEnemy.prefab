@@ -98,12 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d563a59b45cc4904b978e5482b45f585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   negativePoints: 50
   shootingPos: {fileID: 943923680791002442}
   bulletPrefab: {fileID: 7977300787660124200, guid: 769f47ac845458040831c53ec1f8d4e8,
     type: 3}
-  CDShoot: 2
+  CDShoot: 1
 --- !u!1 &2097598968243957053
 GameObject:
   m_ObjectHideFlags: 0

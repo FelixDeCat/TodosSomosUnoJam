@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator TurnOnCollider()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         for (int i = 0; i < players.Count; i++)
         {
             players[i].GetComponent<CircleCollider2D>().enabled = true;
