@@ -13,11 +13,15 @@ public class Player : MonoBehaviour
     public GameObject pausePanel;
     bool isPauseOn = false;
     public Rigidbody2D rb;
+    public Collider2D myCol;
 
     bool anim_control_cursor = false;
     float control_cursor = 1;
 
+    [Range(0,50)]
+    public float repel_force = 25;
 
+    [SerializeField] Bubble myBubble;
 
     private void Start()
     {
@@ -116,9 +120,10 @@ public class Player : MonoBehaviour
             timer_pulse = 0;
             Vector2 randir = new Vector2(Random.Range(transform.position.x + 10, transform.position.x - 10), Random.Range(transform.position.y + 10, transform.position.y - 10)) - new Vector2(transform.position.x, transform.position.y);
             randir.Normalize();
-            rb.AddForceAtPosition(randir * 50, transform.position, ForceMode2D.Force);
+            rb.AddForceAtPosition(randir * 25, transform.position, ForceMode2D.Force);
         }
     }
+    
 
 
     void ClampToScreen(Transform t)
@@ -168,5 +173,14 @@ public class Player : MonoBehaviour
         }
         GameManager.instance.UnSubscribePlayer(this);
         Destroy(this.gameObject);
+    }
+
+    public void TurnOnBubble()
+    {
+        myBubble.Amplify();
+    }
+    public void MyCollision(bool val)
+    {
+        myCol.enabled = val;
     }
 }

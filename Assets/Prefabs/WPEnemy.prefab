@@ -222,7 +222,6 @@ GameObject:
   - component: {fileID: 2252741368376077491}
   - component: {fileID: 1422940416774778088}
   - component: {fileID: 3478184381158730965}
-  - component: {fileID: 1956894483942775702}
   m_Layer: 11
   m_Name: WPEnemy
   m_TagString: Untagged
@@ -261,7 +260,7 @@ MonoBehaviour:
   - {fileID: 4121362156724228390}
   - {fileID: 6213119973145766332}
   num: 0
-  speed: 1
+  speed: 10
   negativePoints: 100
   minDist: 1
   rand: 0
@@ -318,20 +317,6 @@ PolygonCollider2D:
       - {x: -0.061431136, y: 4.7069097}
       - {x: -4.7194414, y: -0.02727193}
       - {x: -4.908332, y: -4.871693}
---- !u!114 &1956894483942775702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6248715216606309843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67bbb03928dd4645bdf01f8690e53d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  negativePoints: 100
 --- !u!1 &7568571503231165969
 GameObject:
   m_ObjectHideFlags: 0

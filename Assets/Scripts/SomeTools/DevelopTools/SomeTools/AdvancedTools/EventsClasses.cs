@@ -14,6 +14,7 @@
     [System.Serializable] public class EventVector3 : UnityEvent<Vector3> { }
     [System.Serializable] public class EventObject : UnityEvent<object> { }
     [System.Serializable] public class EventAction : UnityEvent<Action> { }
+    [System.Serializable] public class EventPlayer : UnityEvent<Player> { }
     [System.Serializable] public class EventCounterPredicate : UnityEvent<Func<bool>> { }
 
 }

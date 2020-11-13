@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ScoreManager : LoadComponent
 {
-    public Text scoreText = null;
-    public Text highScoreText = null;
-    public Text highScoreEndText = null;
+    public TextMeshProUGUI scoreText = null;
+    public TextMeshProUGUI highScoreText = null;
+    public TextMeshProUGUI highScoreEndText = null;
     public GameObject canvasEndGame;
     float points = 1;
     float HighScore = 0;

@@ -51,6 +51,20 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(TurnOnCollider());
     }
+    public void TurnCollisions(bool val)
+    {
+        for (int i = 0; i < players.Count; i++)
+        {
+            players[i].MyCollision(val);
+        }
+    }
+    public void TurnOnBubble()
+    {
+        for (int i = 0; i < players.Count; i++)
+        {
+            players[i].TurnOnBubble();
+        }
+    }
 
     IEnumerator TurnOnCollider()
     {
