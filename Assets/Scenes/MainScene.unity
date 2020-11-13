@@ -410,6 +410,7 @@ MonoBehaviour:
   - {fileID: 61880316133668239, guid: 65235a5b5d539e54bbc0a021fa773289, type: 3}
   space_time: 1
   durationFase: 10
+  proced: 0
 --- !u!4 &96986022
 Transform:
   m_ObjectHideFlags: 0
@@ -695,6 +696,57 @@ Transform:
   m_Father: {fileID: 869158735}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &312270819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 312270820}
+  - component: {fileID: 312270821}
+  m_Layer: 0
+  m_Name: '[3] FaseLoop - Random algoritm'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &312270820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312270819}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 869158735}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &312270821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312270819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78851117da643a2458c5b1b180740c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToSpawn:
+  - {fileID: 2556634946143453580, guid: ea7cb05fd3021d747ab4ada2acf9820b, type: 3}
+  - {fileID: 156899494590323906, guid: 6e2273e0d9dc5eb478e17274787f8704, type: 3}
+  - {fileID: 7812990436163901451, guid: 159660e9262213540b2cd318930cf46d, type: 3}
+  - {fileID: 61880316133668239, guid: 65235a5b5d539e54bbc0a021fa773289, type: 3}
+  space_time: 1
+  durationFase: 10
+  proced: 1
 --- !u!1 &513677670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1219,7 @@ Transform:
   m_Children:
   - {fileID: 96986022}
   - {fileID: 297477831}
+  - {fileID: 312270820}
   m_Father: {fileID: 1124366325}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1185,6 +1238,7 @@ MonoBehaviour:
   fases:
   - {fileID: 96986021}
   - {fileID: 297477830}
+  - {fileID: 312270821}
 --- !u!1 &969491628
 GameObject:
   m_ObjectHideFlags: 0

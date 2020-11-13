@@ -13,6 +13,8 @@ public class Fase_Random : Fase
 
     float timer;
 
+    public bool proced;
+
 
     protected override void OnBegin()
     {
@@ -33,12 +35,16 @@ public class Fase_Random : Fase
         }
         else
         {
-            int index = Random.Range(0, ToSpawn.Length);
-            GameObject go = Instantiate(ToSpawn[index]);
-            go.transform.position = new Vector3(UniversalValues.Get_Random_X_Position(), UniversalValues.POS_TO_ENEMY_SPAWN);
-
-            //EnemyManager.instance.Spawn();
-
+            if (proced)
+            {
+                EnemyManager.instance.Spawn();
+            }
+            else
+            {
+                int index = Random.Range(0, ToSpawn.Length);
+                GameObject go = Instantiate(ToSpawn[index]);
+                go.transform.position = new Vector3(UniversalValues.Get_Random_X_Position(), UniversalValues.POS_TO_ENEMY_SPAWN);
+            }
             timer = 0;
         }
 
