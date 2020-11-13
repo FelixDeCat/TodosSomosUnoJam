@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
     float timer_recall;
     bool onrecall;
 
+    public bool first;
+
 
 
     private void Start()
@@ -86,13 +88,24 @@ public class Player : MonoBehaviour
 
             Vector2 aux = new Vector3(0, 0, 0);
 
-            if (GhostFollow.instance.GetGhostTransformOrNull() != null)
+            if (!first)
             {
-                Vector2 dir = GhostFollow.instance.GetGhostTransformOrNull().position - this.transform.position;
-                dir.Normalize();
+                if (GhostFollow.instance.GetGhostTransformOrNull() != null)
+                {
+                    Vector2 dir = GhostFollow.instance.GetGhostTransformOrNull().position - this.transform.position;
+                    dir.Normalize();
 
 
-                aux = new Vector2(x_move + dir.x, dir.y);
+                    aux = new Vector2(x_move + dir.x, dir.y);
+                }
+                else
+                {
+                    Vector2 dir = new Vector2(transform.position.x, 7) - new Vector2(transform.position.x, transform.position.y);
+                    dir.Normalize();
+
+                    aux = new Vector2(x_move + dir.x, dir.y);
+
+                }
             }
             else
             {
@@ -100,7 +113,6 @@ public class Player : MonoBehaviour
                 dir.Normalize();
 
                 aux = new Vector2(x_move + dir.x, dir.y);
-
             }
 
             rb.velocity = Vector3.Lerp(rb.velocity, aux, control_cursor);
@@ -181,8 +193,6 @@ public class Player : MonoBehaviour
     public void Divide()
     {
         if (onrecall) return;
-
-        
 
         if (type_cel > 1)
         {
