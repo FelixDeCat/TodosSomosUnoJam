@@ -17,6 +17,11 @@ public class Data : MonoBehaviour
     [Header("Spawn data")]
     public float Separation = 1.15f;
 
+    [Header("bois")]
+    public Sprite full_life;
+    public Sprite med_life;
+    public Sprite low_life;
+
     public void Initialize()
     {
         big = GameManager.GetPlayer().transform.localScale.x;

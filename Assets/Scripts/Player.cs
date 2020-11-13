@@ -6,14 +6,14 @@ using Tools.Screen;
 public class Player : MonoBehaviour
 {
     public float speed;
-    public float Maxlife;
-    float Actuallife;
     public int type_cel = 3;
 
     public GameObject pausePanel;
     bool isPauseOn = false;
     public Rigidbody2D rb;
     public Collider2D myCol;
+
+    public SpriteRenderer myRender;
 
     bool anim_control_cursor = false;
     float control_cursor = 1;
@@ -25,7 +25,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        Actuallife = Maxlife;
         GameManager.instance.SubscribePlayer(this);
     }
 
@@ -36,18 +35,21 @@ public class Player : MonoBehaviour
 
         if (type_val == 3)
         {
+            myRender.sprite = GameManager.instance.data.full_life;
             size = GameManager.instance.data.big;
             speed = GameManager.instance.data.slow_speed;
             transform.localScale = new Vector3(size, size, size);
         }
         if (type_val == 2)
         {
+            myRender.sprite = GameManager.instance.data.med_life;
             size = GameManager.instance.data.medium;
             speed = GameManager.instance.data.medium_speed;
             transform.localScale = new Vector3(size, size, size);
         }
         if (type_val == 1)
         {
+            myRender.sprite = GameManager.instance.data.low_life;
             size = GameManager.instance.data.small;
             speed = GameManager.instance.data.fast_speed;
             transform.localScale = new Vector3(size, size, size);
@@ -123,8 +125,18 @@ public class Player : MonoBehaviour
             rb.AddForceAtPosition(randir * 25, transform.position, ForceMode2D.Force);
         }
     }
-    
 
+    public void Heal()
+    {
+        if (type_cel == 1)
+        {
+            Build(2, this.transform.position);
+        }
+        else if (type_cel == 2)
+        {
+            Build(3, this.transform.position);
+        }
+    }
 
     void ClampToScreen(Transform t)
     {
@@ -136,12 +148,13 @@ public class Player : MonoBehaviour
         {
             t.position = new Vector2(ScreenLimits.Left_Inferior.x + 0.5f, t.position.y);
         }
-    }
-    public void SetMaxLife()
-    {
-        Maxlife--;
-    }
 
+
+        if (t.position.y >= ScreenLimits.Right_Superior.y)
+        {
+            t.position = new Vector2(GhostFollow.instance.GetGhostTransformOrNull().position.x, ScreenLimits.Right_Superior.y -0.5f);
+        }
+    }
 
     public void Push(bool right, float force = 10)
     {

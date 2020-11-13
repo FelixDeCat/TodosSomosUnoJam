@@ -213,7 +213,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 4.08}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -232,12 +232,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  Maxlife: 0
   type_cel: 3
   pausePanel: {fileID: 5274116688043762190, guid: 3d08c0fba83a4e445801b4221c7b1a12,
     type: 3}
   rb: {fileID: 4028660358518017678}
   myCol: {fileID: 6562883194047056576}
+  myRender: {fileID: 3997903143027400028}
   repel_force: 25
   myBubble: {fileID: 7753397153863354600}
 --- !u!50 &4028660358518017678

@@ -8,4 +8,10 @@ public class POW_Heal : MonoBehaviour
     {
 
     }
+
+
+    public void ExecutePlayer(Player player)
+    {
+        player.Heal();
+    }
 }
