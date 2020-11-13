@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class ScoreManager : LoadComponent
 {
+    public UnityEvent FeedbackMaxHIgsScore;
+
     public TextMeshProUGUI scoreText = null;
     public TextMeshProUGUI highScoreText = null;
     public TextMeshProUGUI highScoreGlobal = null;
@@ -81,6 +84,7 @@ public class ScoreManager : LoadComponent
             //felicitaciones bbla bla bla
             highScoreGlobal.text = HighScore.instance.GetMaxHigsCore().ToString("N0");
             highScoreCurrent.text = points.ToString("N0");
+            FeedbackMaxHIgsScore.Invoke();
         }
         else
         {
