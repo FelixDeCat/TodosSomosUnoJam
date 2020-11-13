@@ -39,7 +39,7 @@ public class Flippers : EnemyBase
                 GameManager.instance.PushAllPlayers(right,20);
             }
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
 
     }
