@@ -456,6 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   auEx: {fileID: 0}
+  cell_divide: {fileID: 0}
 --- !u!114 &166173227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2110,35 +2111,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2139252891}
     m_Modifications:
-    - target: {fileID: 8168542021241100294, guid: 21fc1b705e366e244aa5682dd4dbb46a,
+    - target: {fileID: 6550879543079837301, guid: 21fc1b705e366e244aa5682dd4dbb46a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 735525127}
-    - target: {fileID: 8168542021241100294, guid: 21fc1b705e366e244aa5682dd4dbb46a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8168542021378357321, guid: 21fc1b705e366e244aa5682dd4dbb46a,
+    - target: {fileID: 7814097187859342761, guid: 21fc1b705e366e244aa5682dd4dbb46a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 735525127}
-    - target: {fileID: 8168542021378357321, guid: 21fc1b705e366e244aa5682dd4dbb46a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene1
-      objectReference: {fileID: 0}
     - target: {fileID: 8168542021550391636, guid: 21fc1b705e366e244aa5682dd4dbb46a,
         type: 3}
       propertyPath: m_Name
       value: EndGamePanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 8168542021550391636, guid: 21fc1b705e366e244aa5682dd4dbb46a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8168542021550391659, guid: 21fc1b705e366e244aa5682dd4dbb46a,
         type: 3}
@@ -2244,11 +2230,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8168542022424938770, guid: 21fc1b705e366e244aa5682dd4dbb46a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21fc1b705e366e244aa5682dd4dbb46a, type: 3}
