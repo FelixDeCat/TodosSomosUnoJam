@@ -109,6 +109,7 @@ public class GameManager : MonoBehaviour
             {
                 plays[acum] = players[i];
                 acum++;
+                if (acum > 1) break;
             }
         }
 
