@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
         GameManager.instance.SubscribePlayer(this);
     }
 
-    public void Build(int type_val)
+    public void Build(int type_val, Vector2 pos)
     {
         type_cel = type_val;
         float size = 0;
@@ -48,9 +48,18 @@ public class Player : MonoBehaviour
             speed = GameManager.instance.data.fast_speed;
             transform.localScale = new Vector3(size, size, size);
         }
+
+        transform.position = pos;
+
+        Vector2 dir = new Vector2(Random.Range(transform.position.x + 10, transform.position.x + 10), Random.Range(transform.position.y + 10, transform.position.y + 10)) - new Vector2(transform.position.x, transform.position.y);
+        dir.Normalize();
+       
+        rb.AddForceAtPosition(dir *20, transform.position , ForceMode2D.Impulse);
+
     }
     float x_move;
     float input_horizontal = 0;
+    float timer_pulse;
     void Update()
     {
 
@@ -97,6 +106,18 @@ public class Player : MonoBehaviour
 
         ClampToScreen(this.transform);
 
+
+        if (timer_pulse < 0.2f)
+        {
+            timer_pulse += Time.deltaTime;
+        }
+        else
+        {
+            timer_pulse = 0;
+            Vector2 randir = new Vector2(Random.Range(transform.position.x + 10, transform.position.x - 10), Random.Range(transform.position.y + 10, transform.position.y - 10)) - new Vector2(transform.position.x, transform.position.y);
+            randir.Normalize();
+            rb.AddForceAtPosition(randir * 50, transform.position, ForceMode2D.Force);
+        }
     }
 
 
@@ -136,8 +157,8 @@ public class Player : MonoBehaviour
                 var separation = GameManager.instance.data.Separation;
                 var obj = GameObject.Instantiate(GameManager.GetPlayer());
                 obj.transform.position = new Vector3(i == 0 ? obj.transform.position.x - separation : obj.transform.position.x + separation, obj.transform.position.y, obj.transform.position.z);
-                if (type_cel == 3) obj.Build(2);
-                if (type_cel == 2) obj.Build(1);
+                if (type_cel == 3) obj.Build(2, this.transform.position);
+                if (type_cel == 2) obj.Build(1, this.transform.position);
             }
         }
         GameManager.instance.UnSubscribePlayer(this);

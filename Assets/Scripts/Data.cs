@@ -22,6 +22,6 @@ public class Data : MonoBehaviour
         big = GameManager.GetPlayer().transform.localScale.x;
         medium = GameManager.GetPlayer().transform.localScale.x * 0.5f;
         small = GameManager.GetPlayer().transform.localScale.x * 0.25f;
-        GameManager.GetPlayer().Build(3);
+        GameManager.GetPlayer().Build(3, transform.position);
     }
 }
