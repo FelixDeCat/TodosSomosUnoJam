@@ -455,8 +455,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a923ad67375952489e72e644266e54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  auEx: {fileID: 0}
-  cell_divide: {fileID: 0}
+  big_Cell_Divide: {fileID: 8300000, guid: 375363f17e172074997631f67fb750c2, type: 3}
+  medium_Cell_Divide: {fileID: 8300000, guid: 2fb9b9c34b9486d4b8461d410b5258ea, type: 3}
+  button_Nav: {fileID: 8300000, guid: 465d995c014b1f143b03b2c1c303e569, type: 3}
+  button_Select: {fileID: 8300000, guid: 42eee10f4ff3be44fae346493d54c74b, type: 3}
 --- !u!114 &166173227
 MonoBehaviour:
   m_ObjectHideFlags: 0
