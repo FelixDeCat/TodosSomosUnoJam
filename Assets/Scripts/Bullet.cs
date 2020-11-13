@@ -8,7 +8,7 @@ public class Bullet : Enemy
     {
         base.OnTriggerEnter2D(collision);
 
-       if (collision.gameObject.layer == 9 || collision.gameObject.layer == 10)
+       if (collision.gameObject.layer == 9 || collision.gameObject.layer == 10 || collision.gameObject.layer == 11)
       {
            GameObject.Destroy(gameObject);
         }
