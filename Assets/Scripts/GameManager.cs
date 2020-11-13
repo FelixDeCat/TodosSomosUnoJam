@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
         posacum = posacum / 2;
 
         var obj = GameObject.Instantiate(GameManager.GetPlayer());
-        obj.Build(signal+1, posacum);
+        obj.Build(signal+1, GhostFollow.instance.follow_dinamic.transform.position);
     }
     public void Create()
     {

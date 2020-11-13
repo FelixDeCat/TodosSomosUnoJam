@@ -43,10 +43,10 @@ public class ScoreManager : LoadComponent
         if (_HighScore < points)
         {
             _HighScore = points;
-            highScoreText.text = "HighScore: " + " " + _HighScore.ToString("N0");
+            highScoreText.text = _HighScore.ToString("N0");
             highScoreGlobal.text = _HighScore.ToString("N0");
         }
-        scoreText.text = "Score: " + " " + points.ToString("N0");
+        scoreText.text = points.ToString("N0");
 
     }
 
