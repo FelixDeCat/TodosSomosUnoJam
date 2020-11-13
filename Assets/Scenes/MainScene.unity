@@ -455,10 +455,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a923ad67375952489e72e644266e54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  big_Cell_Divide: {fileID: 8300000, guid: 375363f17e172074997631f67fb750c2, type: 3}
-  medium_Cell_Divide: {fileID: 8300000, guid: 2fb9b9c34b9486d4b8461d410b5258ea, type: 3}
+  death_Cell: {fileID: 8300000, guid: 375363f17e172074997631f67fb750c2, type: 3}
+  Cell_Divide: {fileID: 8300000, guid: 2fb9b9c34b9486d4b8461d410b5258ea, type: 3}
   button_Nav: {fileID: 8300000, guid: 465d995c014b1f143b03b2c1c303e569, type: 3}
   button_Select: {fileID: 8300000, guid: 42eee10f4ff3be44fae346493d54c74b, type: 3}
+  BGMusicPlay: {fileID: 8300000, guid: d37b04c6bfd717e4db4ce11e6e3a818d, type: 3}
+  BGMusicMenu: {fileID: 8300000, guid: d490a7a8ec20f1f4394d393e798a0c63, type: 3}
 --- !u!114 &166173227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,9 +473,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5816bf000cc04609ad2dfa000e70518, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fx: {fileID: 0}
-  _music: {fileID: 0}
-  _misc: {fileID: 0}
+  _fx: {fileID: 173270272747340509, guid: efdba238d5455554f936fbc25db20dd4, type: 2}
+  _music: {fileID: 1287102917853174684, guid: efdba238d5455554f936fbc25db20dd4, type: 2}
+  _misc: {fileID: 24300002, guid: efdba238d5455554f936fbc25db20dd4, type: 2}
 --- !u!4 &166173228
 Transform:
   m_ObjectHideFlags: 0
@@ -2387,7 +2389,18 @@ MonoBehaviour:
       m_Calls: []
   OnEndLoad:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 166173226}
+        m_MethodName: PlayMusicBGPlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnPlayerDeath:
     m_PersistentCalls:
       m_Calls:

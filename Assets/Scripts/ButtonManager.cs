@@ -11,11 +11,13 @@ public class ButtonManager : MonoBehaviour
 
     public void LoadScene1()
     {
+        SoundDataBase.instance.PlayButtonSelect();
         SceneManager.LoadScene(sceneName);
     }
 
     public void LoadScene2()
     {
+        SoundDataBase.instance.PlayButtonSelect();
         SceneManager.LoadScene(sceneName2);
     }
 

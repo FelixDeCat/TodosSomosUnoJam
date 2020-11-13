@@ -151,6 +151,7 @@ public class Player : MonoBehaviour
     {
         if (type_cel > 1)
         {
+            SoundDataBase.instance.PlayCellDivide();
             PublicEvents.instance.EVENT_OnPlayerHit();
             for (int i = 0; i < 2; i++)
             {
@@ -160,6 +161,10 @@ public class Player : MonoBehaviour
                 if (type_cel == 3) obj.Build(2, this.transform.position);
                 if (type_cel == 2) obj.Build(1, this.transform.position);
             }
+        }
+        else
+        {
+             SoundDataBase.instance.PlayDeathCell();
         }
         GameManager.instance.UnSubscribePlayer(this);
         Destroy(this.gameObject);
